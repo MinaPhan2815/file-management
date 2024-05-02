@@ -45,7 +45,7 @@ There are specific scripts to automate data synchronization between Firebase, Go
      Click "Add Trigger" in the bottom right corner.
      Configure the trigger to run the syncFirebaseToSheet function, set event source to "Time-driven" and select the interval for execution.
 ### Google Drive Sync
-Ensure to set up the syncWithFirebase script in a similar manner to handle synchronization tasks with Google Drive.
+Ensure to set up the syncFirebaseToDrive script in a similar manner to handle synchronization tasks with Google Drive.
 
 ## Technologies
 - HTML
@@ -58,6 +58,10 @@ Ensure to set up the syncWithFirebase script in a similar manner to handle synch
 
 ## Author
 This project was developed by MinhNhatPhan. You can reach out to the author via email at minhnhatphan2815@gmail.com for any inquiries or support related to the File Management System.
+
+## Give Stars ⭐
+
+If you find this project useful or appreciate the work done, please consider giving it a star on GitHub. It helps maintainers prioritize issues and attract contributors, ultimately improving the project for everyone!
 
 ## License
 This project is provided as-is without any specific license. You are free to use and modify the code for personal or educational purposes. However, please note that the author holds no liability for any consequences arising from the use of this software.
