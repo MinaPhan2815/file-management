@@ -1,0 +1,102 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: linear-gradient(to right, #fbc2eb, #a6c1ee);
+}
+
+.form-contain {
+    max-width: 600px;
+    margin: 25px auto 25px;
+    padding: 8px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1,h4 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #45a049;
+}
+
+input,
+textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline-color: #f466cc;
+}
+
+input[type="file"] {
+    border: 1px solid #fff;
+    padding: auto 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#fileList,
+.sheet-url {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 8px 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.file-header {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 8px 0;
+    font-weight: bold;
+}
+
+.file-header strong {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #ccc;
+    overflow: hidden;
+}
+
+.file-item span {
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+#action-btn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.file-item:last-child {
+    border-bottom: none;
+}

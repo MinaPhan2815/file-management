@@ -1,0 +1,36 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>File Manager</title>
+        <link rel="icon" href="./access/file.png">
+        <link rel="stylesheet" href="./access/styles.css">
+    </head>
+    <body>
+        
+        <div class="form-contain">
+            <h1>File Management System</h1>
+            <h4><a href="https://www.facebook.com/MinhNhat2815" target="_blank">MinhNhatPhan</a></h4>
+            <form id="fileForm">
+                <input type="text" id="fileTitle" maxlength="100" placeholder="Title" >
+                <textarea style="resize: none;height: 20vh;" type="text" id="fileDescription" maxlength="150" placeholder="Description" ></textarea>
+                <div id="file-content"></div>
+                <input type="file" id="fileInput" style="display: block;">
+                <button id="fileSubmitButton">Add File</button>
+                <button id="fileEditButton" style="display: none;">Save File</button>
+
+                <div id="fileProcess" align="center" style="display: none;"></div>
+            </form>
+        </div>
+
+        <div class="sheet-url"><a href="https://docs.google.com/spreadsheets/d/1ya4PF8NaXt6r9haf8nyAbyqDTryKpOv5yyDE2KbbNBA/edit#gid=0" target="_blank">Link sheet (sync after every 1 minute)</a></div>
+
+        <div id="fileList"></div>
+        
+        <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-app-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-database-compat.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/9.8.4/firebase-storage-compat.js"></script>
+        <script src="./access/app.js"></script>
+    </body>
+    </html>
