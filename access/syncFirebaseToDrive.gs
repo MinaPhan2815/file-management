@@ -2,7 +2,7 @@ function syncFirebaseToDrive() {
   var folderId = 'your_folder_id'; // Replace 'your_folder_id' with the ID of the folder where you want to store files in Google Drive
   var folder = DriveApp.getFolderById(folderId);
 
-  var firebaseUrl = 'https://your_url_database.json'; // Replace with the URL of your Firebase Realtime Database
+  var firebaseUrl = 'your_url_database'; // Replace with the URL of your Firebase Realtime Database
   var response = UrlFetchApp.fetch(firebaseUrl);
   var filesData = JSON.parse(response.getContentText());
 
@@ -17,9 +17,7 @@ function syncFirebaseToDrive() {
         // Delete all existing files in the subfolder if the new file is different from the old file
         var oldFile = existingFiles.next();
         if (oldFile.getName() === file.fileName) {
-          if (compareFileContents(oldFile, file)) {
             continue; 
-          }
         }
         oldFile.setTrashed(true);
       }
@@ -47,11 +45,4 @@ function syncFirebaseToDrive() {
       subFolder.setTrashed(true);
     }
   }
-}
-
-// Function to compare the contents of two files
-function compareFileContents(file1, file2) {
-  var content1 = file1.getBlob().getDataAsString();
-  var content2 = UrlFetchApp.fetch(file2.fileURL).getContentText();
-  return content1 === content2;
 }

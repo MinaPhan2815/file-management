@@ -140,7 +140,6 @@ function clearForm() {
 function renderFileList() {
     fileList.innerHTML = '';
 
-    // Add title row
     const titleRow = document.createElement('div');
     titleRow.className = 'file-header';
     titleRow.innerHTML = `
@@ -201,17 +200,16 @@ function viewFile(id) {
         fileTitleInput.value = fileToEdit.title;
         fileDescriptionInput.value = fileToEdit.description;
         selectedFileId = id;
-        // fileInput.style.display = 'none';
         fileSubmitButton.style.display = 'none';
         fileEditButton.style.display = 'block';
         fileContent.innerHTML = '';
 
-        const googleDriveLink = `https://drive.google.com/drive/u/0/folders/1ocL5GlBl2iTBjO8L7etqQjwIX4urnKm3`;
+        const googleDriveLink = 'Your-Google-Drive-Link-Here';
 
         fileContent.innerHTML = `
             <p><strong>Id:</strong> ${fileToEdit.id}</p>
             <p><strong>Saved file:</strong> <a href="${fileToEdit.fileURL}" target="_blank">${fileToEdit.fileName}</a></p>
-            <p><strong>Folder Google drive:</strong><a href="${googleDriveLink}" target="_blank">All files (File links by id will be released later)</a></p>
+            <p><strong>Folder Google drive:</strong><a href="${googleDriveLink}" target="_blank"></a></p>
             <p><strong>Choose other file:</strong></p>
         `; 
     }   
@@ -223,9 +221,6 @@ function deleteFile(id) {
         storageRef.delete()
             .then(() => {
                 return database.ref('files/' + id).remove();
-            })
-            .then(() => {
-                renderFileList();
             })
             .catch(error => {
                 console.error('Error deleting file:', error);
